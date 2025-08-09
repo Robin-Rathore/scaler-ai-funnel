@@ -13,6 +13,7 @@ An AI-powered lead acquisition and conversion system that transforms blog reader
 ## 🎯 Business Impact
 
 **Projected Results**:
+
 - Blog-to-lead conversion: 2% → 8% (+300%)
 - Lead-to-consultation: 5% → 15% (+200%)
 - Consultation-to-sale: 20% → 35% (+75%)
@@ -21,41 +22,46 @@ An AI-powered lead acquisition and conversion system that transforms blog reader
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Node.js 18+
 - npm or yarn
 
 ### Installation
 
 1. **Clone and install**
-\`\`\`bash
-git clone https://github.com/yourusername/scaler-ai-funnel
-cd scaler-ai-funnel
-npm install
-\`\`\`
+   \`\`\`bash
+   git clone https://github.com/Robin-Rathore/scaler-ai-funnel.git
+   cd scaler-ai-funnel
+   npm install
+   \`\`\`
 
 2. **Environment setup**
-\`\`\`bash
-cp .env.example .env.local
+   \`\`\`bash
+   cp .env.example .env.local
+
 # Add your API keys (optional for demo)
+
 \`\`\`
 
 3. **Run development server**
-\`\`\`bash
-npm run dev
-\`\`\`
+   \`\`\`bash
+   npm run dev
+   \`\`\`
 
 4. **Open browser**
-Navigate to [http://localhost:3000](http://localhost:3000)
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## 🤖 AI Integration
 
 ### OpenAI Features
+
 - **Career Recommendations**: Personalized job suggestions with salary ranges
 - **Learning Paths**: Custom skill development roadmaps
 - **Insights Generation**: Dynamic career advice based on assessment
 - **Fallback System**: Intelligent defaults when API unavailable
 
 ### Email Automation
+
 - **Professional Templates**: Mobile-responsive HTML emails
 - **Dynamic Content**: Personalized based on lead score and preferences
 - **Multi-format**: HTML and text versions
@@ -64,6 +70,7 @@ Navigate to [http://localhost:3000](http://localhost:3000)
 ## 🏗️ Architecture
 
 ### Tech Stack
+
 \`\`\`
 Frontend: Next.js 14 + React + TypeScript
 Styling: Tailwind CSS + shadcn/ui
@@ -73,21 +80,22 @@ State: React hooks + Context API
 \`\`\`
 
 ### Project Structure
+
 \`\`\`
 scaler-ai-funnel/
 ├── app/
-│   ├── page.tsx                 # Main funnel orchestrator
-│   ├── api/send-confirmation/   # Email API endpoint
-│   └── layout.tsx              # Root layout
+│ ├── page.tsx # Main funnel orchestrator
+│ ├── api/send-confirmation/ # Email API endpoint
+│ └── layout.tsx # Root layout
 ├── components/
-│   ├── career-assessment.tsx    # Multi-step assessment
-│   ├── personalized-report.tsx # AI-generated report
-│   ├── consultation-booking.tsx # Smart booking system
-│   └── ui/                     # Reusable components
+│ ├── career-assessment.tsx # Multi-step assessment
+│ ├── personalized-report.tsx # AI-generated report
+│ ├── consultation-booking.tsx # Smart booking system
+│ └── ui/ # Reusable components
 ├── lib/
-│   ├── openai-service.ts       # AI content generation
-│   ├── email-service.ts        # Email automation
-│   └── utils.ts               # Utilities
+│ ├── openai-service.ts # AI content generation
+│ ├── email-service.ts # Email automation
+│ └── utils.ts # Utilities
 └── README.md
 \`\`\`
 
@@ -97,10 +105,13 @@ scaler-ai-funnel/
 
 **Required for full functionality:**
 \`\`\`bash
+
 # OpenAI Integration
+
 OPENAI_API_KEY=your_openai_api_key
 
 # Email Configuration
+
 EMAIL_HOST=smtp.gmail.com
 EMAIL_PORT=587
 EMAIL_USER=your_email@gmail.com
@@ -109,6 +120,7 @@ EMAIL_FROM="Scaler Career Team <career@scaler.com>"
 \`\`\`
 
 **Development mode:**
+
 - Works without API keys using intelligent fallbacks
 - Uses Ethereal Email for testing email delivery
 
@@ -116,41 +128,44 @@ EMAIL_FROM="Scaler Career Team <career@scaler.com>"
 
 \`\`\`javascript
 function calculateLeadScore(data) {
-  let score = 0;
-  
-  // Experience Level (30 points)
-  if (data.experience === 'senior') score += 30;
-  else if (data.experience === 'mid') score += 20;
-  else score += 10;
-  
-  // Timeline Urgency (25 points)
-  if (data.timeline === 'immediate') score += 25;
-  else if (data.timeline === '3months') score += 20;
-  else score += 10;
-  
-  // Interest Alignment (20 points)
-  const highValueInterests = ['ai-ml', 'data-science'];
-  score += Math.min(data.interests.filter(i => 
-    highValueInterests.includes(i)).length * 10, 20);
-  
-  return Math.min(score, 100);
+let score = 0;
+
+// Experience Level (30 points)
+if (data.experience === 'senior') score += 30;
+else if (data.experience === 'mid') score += 20;
+else score += 10;
+
+// Timeline Urgency (25 points)
+if (data.timeline === 'immediate') score += 25;
+else if (data.timeline === '3months') score += 20;
+else score += 10;
+
+// Interest Alignment (20 points)
+const highValueInterests = ['ai-ml', 'data-science'];
+score += Math.min(data.interests.filter(i =>
+highValueInterests.includes(i)).length \* 10, 20);
+
+return Math.min(score, 100);
 }
 \`\`\`
 
 ## 🎨 Key Components
 
 ### 1. Career Assessment
+
 - 6 strategic questions for qualification
 - Progressive profiling approach
 - Real-time validation and progress tracking
 
 ### 2. AI-Powered Report
+
 - Dynamic career recommendations
 - Personalized salary insights
 - Custom learning paths
 - Intelligent content generation
 
 ### 3. Smart Booking System
+
 - Expert matching based on interests
 - Priority slots for high-score leads
 - Professional email confirmations
@@ -158,12 +173,14 @@ function calculateLeadScore(data) {
 ## 📧 Email Templates
 
 ### Confirmation Email Features
+
 - **Professional Design**: Mobile-responsive HTML
 - **Rich Content**: Consultation details, expert info, preparation tips
 - **Dynamic Personalization**: Content adapts to lead score
 - **Call-to-Action**: Calendar integration and preparation links
 
 ### Email Types
+
 1. **Booking Confirmation**: Immediate after booking
 2. **Reminder Email**: 24 hours before consultation
 3. **Follow-up Email**: Post-consultation feedback request
@@ -171,7 +188,9 @@ function calculateLeadScore(data) {
 ## 🚀 Deployment
 
 ### ⚠️ Important: GitHub Pages Limitation
+
 **GitHub Pages only supports static files** and cannot run Next.js API routes or server-side code. Your application requires API endpoints for:
+
 - AI-powered career recommendations
 - Personalized insights generation
 - Learning path generation
@@ -180,21 +199,25 @@ function calculateLeadScore(data) {
 **Solution**: Deploy to a full-stack platform like Vercel, Netlify, or Railway.
 
 ### Vercel (Recommended - Free & Easy)
+
 1. **Install Vercel CLI**:
+
    ```bash
    npm install -g vercel
    ```
 
 2. **Deploy to Vercel**:
+
    ```bash
    # Login to Vercel
    vercel login
-   
+
    # Deploy to production
    vercel --prod
    ```
 
 3. **Environment Setup in Vercel Dashboard**:
+
    - Go to your project dashboard on [vercel.com](https://vercel.com)
    - Navigate to Settings → Environment Variables
    - Add the following variables:
@@ -214,6 +237,7 @@ function calculateLeadScore(data) {
 ### Alternative Platforms
 
 #### Netlify
+
 ```bash
 # Build the project
 npm run build
@@ -223,6 +247,7 @@ netlify deploy --prod
 ```
 
 #### Railway
+
 ```bash
 # Install Railway CLI
 npm install -g @railway/cli
@@ -234,7 +259,9 @@ railway up
 ```
 
 ### GitHub Pages (Static Only)
+
 If you must use GitHub Pages, you'll need to:
+
 1. Remove all API routes
 2. Use static data instead of dynamic AI content
 3. Use client-side email services like EmailJS
@@ -245,6 +272,7 @@ If you must use GitHub Pages, you'll need to:
 ## 📈 Analytics & Tracking
 
 ### Conversion Funnel Metrics
+
 - Landing → Assessment: Target 25%
 - Assessment → Report: Target 80%
 - Report → Booking: Target 15%
@@ -252,6 +280,7 @@ If you must use GitHub Pages, you'll need to:
 - Booking Show-up: Target 70%
 
 ### Lead Quality Indicators
+
 - Average lead score: Target 65+
 - High-intent leads (80+): Target 30%
 - Expert matching accuracy: Target 90%
@@ -259,18 +288,21 @@ If you must use GitHub Pages, you'll need to:
 ## 🔮 Roadmap
 
 ### Phase 1: Enhanced AI (Weeks 1-2)
+
 - [ ] Advanced ML models for better recommendations
 - [ ] Voice-based assessment option
 - [ ] Multi-language support
 - [ ] A/B testing framework
 
 ### Phase 2: Scale & Optimize (Weeks 3-4)
+
 - [ ] CRM integration (Salesforce/HubSpot)
 - [ ] Advanced analytics dashboard
 - [ ] WhatsApp automation
 - [ ] Mobile app development
 
 ### Phase 3: Enterprise Features (Months 2-3)
+
 - [ ] White-label solution
 - [ ] API for third-party integrations
 - [ ] Advanced reporting and insights
@@ -281,20 +313,25 @@ If you must use GitHub Pages, you'll need to:
 ### Manual Testing Scenarios
 
 **High-Intent Lead:**
+
 - Experience: Senior
 - Timeline: Immediate
 - Interests: AI/ML, Data Science
 - Expected: Score 85+, priority booking
 
 **Medium-Intent Lead:**
+
 - Experience: Mid-level
 - Timeline: 3 months
 - Interests: Web Development
 - Expected: Score 60-70, standard flow
 
 ### Email Testing
+
 \`\`\`bash
+
 # Test email delivery (development)
+
 npm run test:email
 \`\`\`
 
@@ -313,12 +350,13 @@ MIT License - see LICENSE file for details
 ## 🆘 Support
 
 For questions or issues:
+
 - Create GitHub issue
-- Email: support@yourproject.com
+- Email: robinsingh248142@gmail.com
 - Documentation: [Notion Documentation](your-notion-link)
 
 ---
 
 **Built with ❤️ for Scaler AI APM Internship Assignment**
 
-*Transforming blog readers into paying customers through AI-powered personalization and intelligent automation.*
+_Transforming blog readers into paying customers through AI-powered personalization and intelligent automation._
