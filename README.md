@@ -170,16 +170,77 @@ function calculateLeadScore(data) {
 
 ## 🚀 Deployment
 
-### Vercel (Recommended)
-\`\`\`bash
-npm run build
-vercel --prod
-\`\`\`
+### ⚠️ Important: GitHub Pages Limitation
+**GitHub Pages only supports static files** and cannot run Next.js API routes or server-side code. Your application requires API endpoints for:
+- AI-powered career recommendations
+- Personalized insights generation
+- Learning path generation
+- Email confirmation system
 
-### Environment Setup
-1. Add environment variables in Vercel dashboard
-2. Configure OpenAI API key for AI features
-3. Set up SMTP credentials for email delivery
+**Solution**: Deploy to a full-stack platform like Vercel, Netlify, or Railway.
+
+### Vercel (Recommended - Free & Easy)
+1. **Install Vercel CLI**:
+   ```bash
+   npm install -g vercel
+   ```
+
+2. **Deploy to Vercel**:
+   ```bash
+   # Login to Vercel
+   vercel login
+   
+   # Deploy to production
+   vercel --prod
+   ```
+
+3. **Environment Setup in Vercel Dashboard**:
+   - Go to your project dashboard on [vercel.com](https://vercel.com)
+   - Navigate to Settings → Environment Variables
+   - Add the following variables:
+     ```bash
+     OPENAI_API_KEY=your_openai_api_key
+     EMAIL_HOST=smtp.gmail.com
+     EMAIL_PORT=587
+     EMAIL_USER=your_email@gmail.com
+     EMAIL_PASS=your_app_password
+     EMAIL_FROM="Scaler Career Team <career@scaler.com>"
+     ```
+
+4. **Automatic Deployments**:
+   - Connect your GitHub repository to Vercel
+   - Every push to main branch will trigger automatic deployment
+
+### Alternative Platforms
+
+#### Netlify
+```bash
+# Build the project
+npm run build
+
+# Deploy to Netlify (requires Netlify CLI)
+netlify deploy --prod
+```
+
+#### Railway
+```bash
+# Install Railway CLI
+npm install -g @railway/cli
+
+# Deploy to Railway
+railway login
+railway init
+railway up
+```
+
+### GitHub Pages (Static Only)
+If you must use GitHub Pages, you'll need to:
+1. Remove all API routes
+2. Use static data instead of dynamic AI content
+3. Use client-side email services like EmailJS
+4. Modify the app to be purely client-side
+
+**Not recommended** as you'll lose the AI-powered features.
 
 ## 📈 Analytics & Tracking
 
