@@ -353,7 +353,8 @@ For questions or issues:
 
 - Create GitHub issue
 - Email: robinsingh248142@gmail.com
-- Documentation: [Notion Documentation](your-notion-link)
+- Deployed Link: https://scaler-ai-funnel.vercel.app/
+- Documentation: [Notion Documentation](https://husky-ceiling-603.notion.site/Scaler-AI-Lead-Conversion-Funnel-Complete-Documentation-24a34f63707880bfa351fa52ded8f8ae)
 
 ---
 
